@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Examen</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container px-5">
+            <a class="navbar-brand"><b>Cuestionario</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Ticket.html">Ticket</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <h1 class="site-heading text-center text-faded d-none d-lg-block">
+            <span class="site-heading-upper text-primary mb-3">Resuelve el cuestionario</span>
+        </h1><br>
+    </header> 
+
+    <header align="center">
+        <div id="cuestionario" class="TPletras"></div><br>
+        <button id="boton">Mostrar resultado</button><br>
+        <div id="resultado" class="TPletras"></div><br>
+        <div id="AR" class="TPletras"></div>
+        <div id="promedio" class="TPletras"></div> 
+    </header>
+    
+
+    <footer class="footer text-faded text-center py-5">
+        <div class="container"><p class="m-0 small">Harold Guillermo Gutiérrez García matricula 1321124281 Grupo 4422 IS Universidad Politecnica de Tecámac</p></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+
+    <script>
+        const contenedor = document.getElementById("cuestionario");
+        const botonRes = document.getElementById("boton");
+        const resultadoTest = document.getElementById("resultado");
+        
+        const preguntas = [
+            
+            {
+                pregunta : "1. What colour will you paint the children's bedroom?",
+                respuestas: {
+                    a: "I hope it was right.",
+                    b: "We can't decide.",
+                    c: "It wasn't very difficult."
+                },
+                respuestaCorrecta: "b"
+                
+            },
+        
+            {
+                pregunta : "2. I'd like two tickets for tomorrow night.",
+                respuestas: {
+                    a: "How much did you pay?",
+                    b: "Afternoon and evening.",
+                    c: "I'll just check for you."
+                },
+                respuestaCorrecta: "c"
+            },
+        
+            {
+                pregunta : "3. Can I park here?",
+                respuestas: {
+                    a: "Sorry, I did that.",
+                    b: "It's the same place.",
+                    c: "Only for half an hour."
+                },
+                respuestaCorrecta: "c"
+            },
+        
+            {
+                pregunta : "4. I can't understand this email.",
+                respuestas: {
+                    a: "Would you like some help?",
+                    b: "Don't you know?",
+                    c: "I suppose you can."
+                },
+                respuestaCorrecta: "a"
+            },
+        
+            {
+                pregunta : "5. Shall we go to the gym now?",
+                respuestas: {
+                    a: "I'm too tired.",
+                    b: "It's very good.",
+                    c: "Not at all."
+                },
+                respuestaCorrecta: "a"
+            },
+        
+            {
+                pregunta : "6. His eyes were ...... bad that he couldn't read the number plate of the car in front.",
+                respuestas: {
+                    a: "such",
+                    b: "too",
+                    c: "so"
+                },
+                respuestaCorrecta: "c"
+            },
+        
+            {
+                pregunta : "7. The company needs to decide ...... and for all what its position is on this point.",
+                respuestas: {
+                    a: "here",
+                    b: "once",
+                    c: "first"
+                },
+                respuestaCorrecta: "b"
+            },
+        
+        
+            {
+                pregunta : "8. Don't put your cup on the ...... of the table – someone will knock it off.",
+                respuestas: {
+                    a: "outside",
+                    b: "edge",
+                    c: "border"
+                },
+                respuestaCorrecta: "b"
+            },
+        
+        
+            {
+                pregunta : "9. I'm sorry - I didn't ...... to disturb you.",
+                respuestas: {
+                    a: "hope",
+                    b: "think",
+                    c: "mean"
+                },
+                respuestaCorrecta: "c"
+            },
+        
+            {
+                pregunta : "10. The singer ended the concert ...... her most popular song.",
+                respuestas: {
+                    a: "with",
+                    b: "by",
+                    c: "as"
+                },
+                respuestaCorrecta: "a"
+            },
+        
+            {
+                pregunta : "11. Would you mind ...... these plates a wipe before putting them in the cupboard?",
+                respuestas: {
+                    a: "doing",
+                    b: "getting",
+                    c: "giving"
+                },
+                respuestaCorrecta: "c"
+            },
+        
+            {
+                pregunta : "12. I was looking forward ...... at the new restaurant, but it was closed.",
+                respuestas: {
+                    a: "to have eaten",
+                    b: "to eating",
+                    c: "eating"
+                },
+                respuestaCorrecta: "b"
+            },
+        
+            {
+                pregunta : "13. ...... tired Melissa is when she gets home from work, she always makes time to say goodnight to the children.",
+                respuestas: {
+                    a: " Whatever ",
+                    b: "No matter how ",
+                    c: "However much "
+                },
+                respuestaCorrecta: "b"
+            },
+        
+            {
+                pregunta : "14. It was only ten days ago ...... she started her new job.",
+                respuestas: {
+                    a: " since ",
+                    b: "after ",
+                    c: "that "
+                },
+                respuestaCorrecta: "c"
+            },
+        
+            {
+                pregunta : "15. The shop didn't have the shoes I wanted, but they've ...... a pair specially for me.",
+                respuestas: {
+                    a: "booked",
+                    b: "ordered",
+                    c: "commanded"
+                },
+                respuestaCorrecta: "b"
+            }
+        ];
+        
+        function Mostrar(){
+            const preguntasYrespuestas = [];
+        
+            preguntas.forEach((preguntaActual, numeroDePregunta) => {
+                checkd="true"
+                const respuestas = [];
+                for(letraRespuesta in preguntaActual.respuestas){
+                    respuestas.push(
+                        `<label>
+                            <input type="radio" name="${numeroDePregunta}" value="${letraRespuesta}">
+                            ${letraRespuesta} : ${preguntaActual.respuestas[letraRespuesta]}
+                        </label>`
+                    );
+                }
+                preguntasYrespuestas.push(
+                    `<div class="cuestion"> ${preguntaActual.pregunta} </div>
+                    <div class="respuestas"> ${respuestas.join('')} </div>
+                    `
+                );
+            })
+        
+            contenedor.innerHTML = preguntasYrespuestas.join('');
+        }
+        
+        Mostrar();
+        
+        function mostrarResultado() {
+          const respuestas = contenedor.querySelectorAll(".respuestas");
+          let respuestasCorrectas = 0;
+        
+          preguntas.forEach((preguntaActual, numeroDePregunta) => {
+            const todasLasRespuestas = respuestas[numeroDePregunta];
+            const checkboxRespuestas = `input[name='${numeroDePregunta}']:checked`;
+            const respuestaElegida = (
+              todasLasRespuestas.querySelector(checkboxRespuestas) || {}
+            ).value;
+        
+            if (respuestaElegida === preguntaActual.respuestaCorrecta) {
+              respuestasCorrectas++;
+        
+              respuestas[numeroDePregunta].style.color = "blue";
+            } else {
+              respuestas[numeroDePregunta].style.color = "red";
+            }
+          });
+        
+          
+          var promedio = respuestasCorrectas * 10 / 15
+          document.getElementById("promedio").innerHTML = "Calificación total es de " + " " + promedio;
+        
+          if(promedio >=7){
+            
+            alert("Aprobó el examen")
+          }
+        
+          if(promedio <=6){
+            alert("Reprobó el examen")
+          }
+        
+          if(promedio >9){
+        
+            alert("Felicidades ganaste una beca escolar")
+          }
+          
+        
+          resultadoTest.innerHTML =
+            "Total de aciertos es de " +
+            respuestasCorrectas +
+            " de preguntas totales " +
+            preguntas.length;
+        
+        
+        }
+        
+        botonRes.addEventListener("click", mostrarResultado);
+        
+        </script>
+</body>
+</html>
